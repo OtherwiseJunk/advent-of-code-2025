@@ -20,7 +20,7 @@ def part_1(battery_banks)
   final_state[:joltage]
 end
 
-def part_2(battery_banks, n = 3)
+def part_2(battery_banks, n = 12)
   final_state = battery_banks.each_with_object({ joltage: 0 }) do |bank, state|
     batteries = bank.digits.reverse
     d_len = batteries.length
@@ -47,4 +47,4 @@ raw_text_data = File.read("inputs/3.txt")
 battery_banks = raw_text_data.split("\n").map { |line| line.to_i }
 
 puts" Part 1 Result: #{part_1(battery_banks)}"
-puts" Part 2 Result: #{part_2(battery_banks, 12)}"
+puts" Part 2 Result: #{part_2(battery_banks)}"
